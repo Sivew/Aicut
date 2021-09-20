@@ -1,6 +1,6 @@
 {
     "ipcMode": null,
-    "executionRoleArn": "arn:aws:iam::196280778687:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::999111338687:role/ecsTaskExecutionRole",
     "containerDefinitions": [
       {
         "dnsSearchDomains": null,
@@ -29,7 +29,7 @@
         "memoryReservation": null,
         "volumesFrom": [],
         "stopTimeout": null,
-        "image": "public.ecr.aws/o0c1g4l0/my_repo:client",
+        "image": "999111338687.dkr.ecr.eu-west-3.amazonaws.com/ai-cut:8e6a6eb0ee04b53623d13affec17b7be51c10c9a",
         "startTimeout": null,
         "firelensConfiguration": null,
         "dependsOn": null,
@@ -80,7 +80,7 @@
         "memoryReservation": null,
         "volumesFrom": [],
         "stopTimeout": null,
-        "image": "public.ecr.aws/o0c1g4l0/my_repo:latest",
+        "image": "mysql:latest",
         "startTimeout": null,
         "firelensConfiguration": null,
         "dependsOn": null,
@@ -136,7 +136,7 @@
         "memoryReservation": null,
         "volumesFrom": [],
         "stopTimeout": null,
-        "image": "public.ecr.aws/o0c1g4l0/my_repo:app",
+        "image": "server",
         "startTimeout": null,
         "firelensConfiguration": null,
         "dependsOn": null,
@@ -163,27 +163,27 @@
       "EXTERNAL",
       "EC2"
     ],
-    "taskDefinitionArn": "arn:aws:ecs:ap-south-1:196280778687:task-definition/first-run-task-definition:3",
-    "family": "first-run-task-definition",
+    "taskDefinitionArn": "arn:aws:ecs:eu-west-3:999111338687:task-definition/DeploymentContainer:16",
+    "family": "DeploymentContainer",
     "requiresAttributes": [
       {
         "targetId": null,
         "targetType": null,
         "value": null,
-        "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        "name": "com.amazonaws.ecs.capability.ecr-auth"
       },
       {
         "targetId": null,
         "targetType": null,
         "value": null,
-        "name": "ecs.capability.execution-role-awslogs"
+        "name": "ecs.capability.execution-role-ecr-pull"
       }
     ],
     "pidMode": null,
     "requiresCompatibilities": [
       "EC2"
     ],
-    "networkMode": "awsvpc",
+    "networkMode": null,
     "cpu": "256",
     "revision": 16,
     "status": "ACTIVE",

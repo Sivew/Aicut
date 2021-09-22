@@ -1,6 +1,7 @@
 {
     "ipcMode": null,
     "executionRoleArn": "arn:aws:iam::196280778687:role/ecsTaskExecutionRole",
+    "networkMode": "bridge",
     "containerDefinitions": [
       {
         "dnsSearchDomains": null,
@@ -164,7 +165,7 @@
       "EC2"
     ],
     "taskDefinitionArn": "arn:aws:ecs:ap-south-1:196280778687:task-definition/first-run-task-definition:3",
-    "family": "first-run-task-definition",
+    "family": "test_task",
     "requiresAttributes": [
       {
         "targetId": null,
@@ -183,7 +184,6 @@
     "requiresCompatibilities": [
       "EC2"
     ],
-    "networkMode": "awsvpc",
     "cpu": "256",
     "revision": 16,
     "status": "ACTIVE",

@@ -70,7 +70,7 @@ jobs:
       id: build-image-client	
       env:	
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}	
-        ECR_REPOSITORY: my_repo
+        ECR_REPOSITORY: app
         IMAGE_TAG: ${{ github.sha }}	
       working-directory: client	
       run: |	

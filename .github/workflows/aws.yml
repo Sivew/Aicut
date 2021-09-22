@@ -69,7 +69,7 @@ jobs:
     - name: Build, tag, and push image client to Amazon ECR	
       id: build-image-client	
       env:	
-        ECR_REGISTRY: o0c1g4l0
+        ECR_REGISTRY: public.ecr.aws/o0c1g4l0
         ECR_REPOSITORY: my_repo
         IMAGE_TAG: ${{ github.sha }}	
       working-directory: client	
@@ -84,8 +84,8 @@ jobs:
     - name: Build, tag, and push image server to Amazon ECR	
       id: build-image-server
       env:
-        ECR_REGISTRY: o0c1g4l0
-        ECR_REPOSITORY: my_repo	
+        ECR_REGISTRY: public.ecr.aws/o0c1g4l0
+        ECR_REPOSITORY: my_repo
         IMAGE_TAG: ${{ github.sha }}	
       working-directory: server	
       run: |	

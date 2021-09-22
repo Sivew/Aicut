@@ -164,7 +164,7 @@
       "EXTERNAL",
       "EC2"
     ],
-    "taskDefinitionArn": "arn:aws:ecs:ap-south-1:196280778687:task-definition/first-run-task-definition:3",
+    // "taskDefinitionArn": "arn:aws:ecs:ap-south-1:196280778687:task-definition/test_task:3",
     "family": "test_task",
     "requiresAttributes": [
       {
@@ -185,7 +185,7 @@
       "EC2"
     ],
     "cpu": "256",
-    "revision": 16,
+    // "revision": 16,
     "status": "ACTIVE",
     "inferenceAccelerators": null,
     "proxyConfiguration": null,

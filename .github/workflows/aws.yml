@@ -70,7 +70,7 @@ jobs:
       id: build-image-client	
       env:	
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}	
-        ECR_REPOSITORY: my_repo	
+        ECR_REPOSITORY: my_repo
         IMAGE_TAG: ${{ github.sha }}	
       working-directory: client	
       run: |	
@@ -85,7 +85,7 @@ jobs:
       id: build-image-server
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}	
-        ECR_REPOSITORY: my_repo	
+        ECR_REPOSITORY: app	
         IMAGE_TAG: ${{ github.sha }}	
       working-directory: server	
       run: |	
@@ -125,5 +125,5 @@ jobs:
       with:
         task-definition: ${{ steps.render-client.outputs.task-definition }}
         service: test_service
-        cluster: test-cluster
+        cluster: Test-cluster
         wait-for-service-stability: true

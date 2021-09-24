@@ -4,6 +4,7 @@
     "networkMode": "bridge",
     "containerDefinitions": [
       {
+        "name": "client",
         "dnsSearchDomains": null,
         "environmentFiles": null,
         "logConfiguration": null,
@@ -33,7 +34,12 @@
         "image": "public.ecr.aws/o0c1g4l0/my_repo:client",
         "startTimeout": null,
         "firelensConfiguration": null,
-        "dependsOn": null,
+        "dependsOn": [
+          {
+            "containerName": "db",
+            "condition": "COMPLETE"
+          }
+        ],
         "disableNetworking": null,
         "interactive": null,
         "healthCheck": null,
@@ -46,15 +52,21 @@
         "readonlyRootFilesystem": null,
         "dockerLabels": null,
         "systemControls": null,
-        "privileged": null,
-        "name": "client"
+        "privileged": null
       },
       {
+        "name": "db",
         "dnsSearchDomains": null,
         "environmentFiles": null,
         "logConfiguration": null,
         "entryPoint": null,
-        "portMappings": [],
+        "portMappings": [
+          {
+            "hostPort": 3306,
+            "protocol": "tcp",
+            "containerPort": 3306
+          }
+        ],
         "command": null,
         "linuxParameters": null,
         "cpu": 0,
@@ -81,7 +93,7 @@
         "memoryReservation": null,
         "volumesFrom": [],
         "stopTimeout": null,
-        "image": "public.ecr.aws/o0c1g4l0/my_repo:latest",
+        "image": "mysql:latest",
         "startTimeout": null,
         "firelensConfiguration": null,
         "dependsOn": null,
@@ -97,10 +109,10 @@
         "readonlyRootFilesystem": null,
         "dockerLabels": null,
         "systemControls": null,
-        "privileged": null,
-        "name": "db"
+        "privileged": null
       },
       {
+        "name": "server",
         "dnsSearchDomains": null,
         "environmentFiles": null,
         "logConfiguration": null,
@@ -140,7 +152,12 @@
         "image": "public.ecr.aws/o0c1g4l0/my_repo:app",
         "startTimeout": null,
         "firelensConfiguration": null,
-        "dependsOn": null,
+        "dependsOn": [
+          {
+            "containerName": "db",
+            "condition": "COMPLETE"
+          }
+        ],
         "disableNetworking": null,
         "interactive": null,
         "healthCheck": null,
@@ -153,8 +170,7 @@
         "readonlyRootFilesystem": null,
         "dockerLabels": null,
         "systemControls": null,
-        "privileged": null,
-        "name": "server"
+        "privileged": null
       }
     ],
     "placementConstraints": [],

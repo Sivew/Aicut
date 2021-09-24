@@ -31,7 +31,7 @@
         "memoryReservation": null,
         "volumesFrom": [],
         "stopTimeout": null,
-        "image": "public.ecr.aws/o0c1g4l0/my_repo:app",
+        "image": "public.ecr.aws/o0c1g4l0/my_repo:client",
         "startTimeout": null,
         "firelensConfiguration": null,
         "dependsOn": [
@@ -149,7 +149,7 @@
         "memoryReservation": null,
         "volumesFrom": [],
         "stopTimeout": null,
-        "image": "public.ecr.aws/o0c1g4l0/my_repo:client",
+        "image": "public.ecr.aws/o0c1g4l0/my_repo:server",
         "startTimeout": null,
         "firelensConfiguration": null,
         "dependsOn": [

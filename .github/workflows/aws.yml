@@ -71,7 +71,7 @@ jobs:
       env:	
         ECR_REGISTRY: public.ecr.aws/o0c1g4l0
         ECR_REPOSITORY: my_repo
-        IMAGE_TAG: ${{ github.sha }}	
+        IMAGE_TAG: client	
       working-directory: client	
       run: |	
         # Build a docker container and	
@@ -87,7 +87,7 @@ jobs:
       env:
         ECR_REGISTRY: public.ecr.aws/o0c1g4l0
         ECR_REPOSITORY: my_repo
-        IMAGE_TAG: ${{ github.sha }}	
+        IMAGE_TAG: server	
       working-directory: server	
       run: |	
         # Build a docker container and	
@@ -124,7 +124,7 @@ jobs:
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
-        task-definition: ${{ steps.render-client.outputs.task-definition }}
+        task-definition: task-definition.json
         service: test_service
         cluster: Test-cluster
         wait-for-service-stability: true

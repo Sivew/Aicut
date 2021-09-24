@@ -37,7 +37,7 @@
         "dependsOn": [
           {
             "containerName": "db",
-            "condition": "HEALTHY"
+            "condition": "START"
           }
         ],
         "disableNetworking": null,
@@ -155,7 +155,7 @@
         "dependsOn": [
           {
             "containerName": "db",
-            "condition": "HEALTHY"
+            "condition": "START"
           }
         ],
         "disableNetworking": null,

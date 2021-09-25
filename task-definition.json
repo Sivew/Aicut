@@ -174,7 +174,7 @@
       }
     ],
     "placementConstraints": [],
-    "memory": "512",
+    "memory": "3400",
     "taskRoleArn": null,
     "compatibilities": [
       "EXTERNAL",
@@ -199,7 +199,7 @@
     "requiresCompatibilities": [
       "EC2"
     ],
-    "cpu": "256",
+    "cpu": "1800",
     "inferenceAccelerators": null,
     "proxyConfiguration": null,
     "volumes": [
